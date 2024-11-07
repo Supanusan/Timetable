@@ -9,7 +9,7 @@ const App = () => {
 
   useEffect(() => {
 
-    // localStorage.setItem('approvel key', 'approvelkeybysupanusanRUSL')
+    localStorage.setItem('approvel key', 'approvelkeybysupanusanRUSL')
 
     const approved = localStorage.getItem("approvel key")
     if (approved === 'approvelkeybysupanusanRUSL') {
