@@ -33,9 +33,9 @@ const App = () => {
         </Router >
       ) :
         <>
-          {setTimeout(() => {
-            <Error />
-          }, 2000)}
+
+          <Error />
+
         </>}
     </>
   );
