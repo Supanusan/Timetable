@@ -67,7 +67,7 @@ const Zoomlink = () => {
                 },
                 {
                     type: 'third class link',
-                    link: '',
+                    link: 'https://learn.zoom.us/j/96703061039?pwd=yAjb0BBhGRuhpTVnhuP9894RZpmXEf.1#success',
                     time: '1.00 -4.00'
                 },
             ],
