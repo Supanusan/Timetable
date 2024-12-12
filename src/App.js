@@ -1,42 +1,34 @@
-import { React, useEffect, useState } from 'react';
+import { React,} from 'react';
 import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
 import Mainpage from './Components/Mainpage';
 import Zoomlink from './Components/Zoomlink';
-import Error from './Components/Error';
+import Login from './Components/Login';
 const App = () => {
 
-  const [Isapproved, setIsapproved] = useState('')
+  // const [Isapproved, setIsapproved] = useState('false')
 
-  useEffect(() => {
-
-    // localStorage.setItem('approvel key', 'approvelkeybysupanusanRUSL')
-
-    const approved = localStorage.getItem("approvel key")
-    if (approved === 'approvelkeybysupanusanRUSL') {
-      setIsapproved(approved)
-    }
-
-
-  }, [])
+  // useEffect(() => {
+  //   const approved = localStorage.getItem("valid")
+  //   if (approved === 'authorizeduser') {
+  //     setIsapproved(true)
+  //   }
+  // }, [])
 
 
   return (
 
     <>
-      {Isapproved ? (
+    
 
         < Router >
           <Routes>
-            <Route path='/' element={<Mainpage />} />
+          <Route path='/' element={<Login />} />
+            <Route path='/Main' element={<Mainpage />} />
             <Route path='/Zoomlink' element={<Zoomlink />} />
           </Routes>
         </Router >
-      ) :
-        <>
-
-          <Error />
-
-        </>}
+      
+        
     </>
   );
 };

@@ -92,7 +92,17 @@ const Zoomlink = () => {
     const [Min, setMin] = useState('00')
     const [Sec, setSec] = useState('00')
 
-    useEffect(() => {
+      const [Isapproved, setIsapproved] = useState(false)
+    useEffect(()=>{
+        const approved = localStorage.getItem("valid")
+          if (approved === 'authorizeduser') {
+            setIsapproved(true)
+          }
+    },[])
+      useEffect(() => {
+
+        
+        
         const timer = setTimeout(() => {
             const hour = new Date().getHours()
             setHour(hour)
@@ -119,7 +129,8 @@ const Zoomlink = () => {
 
 
     return (
-        <div className='flex flex-col items-center w-full h-screen'>
+        <div>
+            {Isapproved && (<div className='flex flex-col items-center w-full h-screen'>
             <div className='flex'>
                 <h1 className='font-extrabold text-4xl text-blue-600'> {findToday.day} Classes Link</h1>
             </div>
@@ -130,6 +141,7 @@ const Zoomlink = () => {
             <div className='absolute top-6 right-10 px-10 py-10 text-4xl font-bold'>
                 {Hour}:{Min}:{Sec}
             </div>
+        </div>)}
         </div>
 
     )
