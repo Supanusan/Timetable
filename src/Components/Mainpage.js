@@ -1,29 +1,31 @@
-import React, { useEffect, useState } from 'react'
-import Header from './Header'
-import Hero from './Hero'
-import Footer from './Footer'
+import React, { useEffect, useState } from "react";
+import Header from "./Header";
+import Hero from "./Hero";
+import Footer from "./Footer";
 
 const Mainpage = () => {
-const [Isapproved, setIsapproved] = useState(false)
+  const [Isapproved, setIsapproved] = useState(false);
 
   useEffect(() => {
-    const approved = localStorage.getItem("valid")
-    if (approved === 'authorizeduser') {
-      setIsapproved(true)
+    const approved = localStorage.getItem("valid");
+    if (approved === "authorizeduser") {
+      setIsapproved(true);
     }
-  }, [])
-    return (
+  }, []);
+  return (
+    <div>
+      {Isapproved && (
         <div>
-        {Isapproved && (<div>
-            <Header />
-            <div className='py-8'>
-                <Hero />
-            </div>
+          <Header />
+          <div className="py-8">
+            <Hero />
+          </div>
 
-            <Footer />
-        </div>)}
-</div>
-    )
-}
+          <Footer />
+        </div>
+      )}
+    </div>
+  );
+};
 
-export default Mainpage
+export default Mainpage;
