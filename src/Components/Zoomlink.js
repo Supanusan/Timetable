@@ -77,7 +77,7 @@ const Zoomlink = () => {
             links: [
                 {
                     type: 'frist class link',
-                    link: '',
+                    link: 'https://learn.zoom.us/j/97766539926?pwd=OK0bDQnFHWZcIrz3WKo6sWVMlVGAdJ.1',
                     time: '10.00 -12.00'
                 },
                 // {
