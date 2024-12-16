@@ -107,11 +107,11 @@ const Zoomlink = () => {
   }, []);
   useEffect(() => {
     const timer = setTimeout(() => {
-      const hour = new Date().getHours();
+      const hour = new Date().getHours().toString().padStart(2,0);
       setHour(hour);
-      const min = new Date().getMinutes();
+      const min = new Date().getMinutes().toString().padStart(2,0);
       setMin(min);
-      const sec = new Date().getSeconds();
+      const sec = new Date().getSeconds().toString().padStart(2,0);
       setSec(sec);
     }, 1000);
 
@@ -127,17 +127,17 @@ const Zoomlink = () => {
   return (
     <div>
       {Isapproved && (
-        <div className="flex flex-col items-center w-full h-screen">
+        <div className="flex flex-col items-center pt-10 w-full h-screen">
           <div className="flex">
-            <h1 className="font-extrabold text-4xl text-blue-600">
-              {" "}
+            <h1 className="font-extrabold  text-2xl text-blue-600 md:text-4xl">
+  
               {findToday.day} Classes Link
             </h1>
           </div>
-          <ul className="py-10">
+          <ul className="py-24 md:py-10  w-full h-screen">
             {findToday.links.map((link, index) => (
-              <a id={index} href={link.link}>
-                <li className="py-6 px-6 text-3xl flex bg-slate-400 my-2 rounded-md text-white">
+              <a className="flex flex-col items-center" id={index} href={link.link}>
+                <li className=" w-3/4 py-6 px-6 text-xl md:text-3xl flex bg-slate-400 my-2 rounded-md text-white justify-center">
                   <h1 className="underline"> {link.type} </h1>
                   <h1 className="font-semibold text-orange-600 px-4">
                     -{link.time}
@@ -146,7 +146,7 @@ const Zoomlink = () => {
               </a>
             ))}
           </ul>
-          <div className="absolute top-6 right-10 px-10 py-10 text-4xl font-bold">
+          <div className="absolute text-xl font-semibold top-24 right-3 md:top-6 md:right-10 md:px-10 md:py-10 md:text-4xl md:font-bold">
             {Hour}:{Min}:{Sec}
           </div>
         </div>

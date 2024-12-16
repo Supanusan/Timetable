@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-scroll";
 
 const Header = () => {
   const navigate = useNavigate();
-
+  const [isEnable, setIsEnable] = useState(false)
   const link = [
     {
       Name: "Semi-Timetable",
@@ -24,28 +24,32 @@ const Header = () => {
     },
   ];
 
+  const handelClick = ()=>{
+setIsEnable(!isEnable)
+  }
+
   const FNavigation = () => {
     navigate("/Zoomlink");
   };
 
   return (
-    <div className="flex flex-col items-center w-full h-[100px] py-6 px-3  ">
-      <h1 className="font-extrabold text-4xl text-blue-600 w-full text-center ">
+    <div  className="flex flex-col items-center w-full h-[100px] py-10 px-3 relative ">
+      <h1 className="font-extrabold text-xl md:text-4xl text-blue-600 w-full text-center ">
         RUSL 2022 /2023 TIMETABLE
       </h1>
-      <div className="w-[200px] h-[100px] flex flex-col justify-evenly md:hidden">
-        <span className=" w-[40px] h-6 my-2 bg-black"></span>
-        <span className=" w-[40px] h-6 my-2 bg-black"></span>
-        <span className=" w-[40px]  h-6 my-2 bg-black"></span>
+      <div onClick={handelClick} className="w-fit h-fit flex flex-col justify-evenly md:hidden absolute top-20 right-[7%]">
+        <span className=" w-[30px] h-1 my-1 bg-black" />
+        <span className=" w-[30px] h-1  bg-black" />
+        <span className=" w-[30px]  h-1 mt-1 bg-black" />
       </div>
-      <div>
+      <div className="flex flex-col items-center justify-center w-full mt-10">
         <button
-          className="bg-orange-600 py-3 px-8 text-white text-xl rounded-md mt-[7vh]"
+          className="bg-orange-600 py-2 px-4 text-white text-x rounded-md  animate-blink-animation"
           onClick={FNavigation}
         >
           To get Zoom Link
         </button>
-        <div className=" absolute right-0 mt-6 w-[50%] hidden justify-evenly px-4 md:flex">
+        <div className={`w-screen h-lvh bg-orange-200 flex-col justify-evenly px-4 md:hidden ${isEnable ? "block" : "hidden"}`}>
           {link.map((data, index) => (
             <Link
               key={index}
@@ -53,26 +57,14 @@ const Header = () => {
               className="linkstyle"
               smooth={true}
               spy={true}
+              onClick={()=>{setIsEnable(false)}}
             >
               {data.Name}
             </Link>
           ))}
         </div>
-        {/* Mobile Responsive */}
 
-        <div className=" absolute right-0 mt-2  justify-evenly px-4 sm:flex md:hidden flex flex-col items-center bg-slate-200 w-full h-screen">
-          {link.map((data, index) => (
-            <Link
-              key={index}
-              to={data.TO}
-              className="linkstyle"
-              smooth={true}
-              spy={true}
-            >
-              {data.Name}
-            </Link>
-          ))}
-        </div>
+
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div className="pt-32">
+    <div className="pt-32 px-3 md:px-0">
       <div id="main" className="py-10 flex justify-center bg-slate-200">
         <img src="Fristyear.png" alt="" />
       </div>
