@@ -49,7 +49,7 @@ setIsEnable(!isEnable)
         >
           To get Zoom Link
         </button>
-        <div className={`w-screen h-lvh bg-orange-200 flex-col justify-evenly px-4 md:hidden ${isEnable ? "block" : "hidden"}`}>
+        <div className={`w-screen h-lvh bg-orange-200 flex-col justify-evenly px-4 md:flex md:flex-row md:bg-transparent ${isEnable ? "block" : "hidden"}`}>
           {link.map((data, index) => (
             <Link
               key={index}
