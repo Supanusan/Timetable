@@ -27,7 +27,7 @@ const All_LinkPage = () => {
     <div className="flex flex-col justify-center items-center">
       <ul>
         {AllclassLink.map((each, index) => (
-          <a href={each.link} target="_blank" key={index}>
+          <a href={each.link} key={index}>
             <li className="bg-gradient-to-r from-white to-slate-500 text-orange-600 m-10 p-10 font-semibold text-2xl flex justify-center items-center rounded-lg underline">
               {each.sub}
             </li>

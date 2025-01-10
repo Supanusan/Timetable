@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Button, Link } from "react-scroll";
+import { Link } from "react-scroll";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -53,14 +53,13 @@ const Header = () => {
           >
             To get Zoom Link
           </button>
-          <Button
-            className="bg-white border-orange-600 border-2 py-2 px-1  md:px-10 text-orange-600 text-x rounded-md absolute right-7  md:top-30 md:right-10 font-bold hover:bg-orange-600 hover:text-white duration-700 "
-            onClick={() => navigate("/AllLink")}
-          >
-            All Links
-          </Button>
         </div>
-
+        <button
+          className="bg-white border-orange-600 border-2 py-2 px-1  md:px-10 text-orange-600 text-x rounded-md absolute right-7  md:top-30 md:right-10 font-bold hover:bg-orange-600 hover:text-white duration-700 "
+          onClick={() => navigate("/AllLink")}
+        >
+          All Links
+        </button>
         <div
           className={`w-screen h-lvh bg-orange-200 flex-col justify-evenly px-4 md:flex md:flex-row md:bg-transparent ${
             isEnable ? "block" : "hidden"
