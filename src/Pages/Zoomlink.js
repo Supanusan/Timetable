@@ -73,7 +73,7 @@ const Zoomlink = () => {
         },
         {
           type: "third class link",
-          link: "https://learn.zoom.us/j/96703061039?pwd=yAjb0BBhGRuhpTVnhuP9894RZpmXEf.1#success",
+          link: "https://learn.zoom.us/j/96703061039?pwd=yAjb0BBhGRuhpTVnhuP9894RZpmXEf.1",
           time: "1.00 -4.00",
         },
       ],
@@ -107,11 +107,11 @@ const Zoomlink = () => {
   }, []);
   useEffect(() => {
     const timer = setTimeout(() => {
-      const hour = new Date().getHours().toString().padStart(2,0);
+      const hour = new Date().getHours().toString().padStart(2, 0);
       setHour(hour);
-      const min = new Date().getMinutes().toString().padStart(2,0);
+      const min = new Date().getMinutes().toString().padStart(2, 0);
       setMin(min);
-      const sec = new Date().getSeconds().toString().padStart(2,0);
+      const sec = new Date().getSeconds().toString().padStart(2, 0);
       setSec(sec);
     }, 1000);
 
@@ -130,13 +130,16 @@ const Zoomlink = () => {
         <div className="flex flex-col items-center pt-10 w-full h-screen">
           <div className="flex">
             <h1 className="font-extrabold  text-2xl text-blue-600 md:text-4xl">
-  
               {findToday.day} Classes Link
             </h1>
           </div>
           <ul className="py-24 md:py-10  w-full h-screen">
             {findToday.links.map((link, index) => (
-              <a className="flex flex-col items-center" id={index} href={link.link}>
+              <a
+                className="flex flex-col items-center"
+                id={index}
+                href={link.link}
+              >
                 <li className=" w-3/4 py-6 px-6 text-xl md:text-3xl flex bg-slate-400 my-2 rounded-md text-white justify-center">
                   <h1 className="underline"> {link.type} </h1>
                   <h1 className="font-semibold text-orange-600 px-4">

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Header from "./Header";
-import Hero from "./Hero";
-import Footer from "./Footer";
+import Header from "./Components/Header";
+import Hero from "./Components/Hero";
+import Footer from "./Components/Footer";
 
 const Mainpage = () => {
   const [Isapproved, setIsapproved] = useState(false);
