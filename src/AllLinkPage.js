@@ -1,6 +1,6 @@
 import React from "react";
 
-const All_link = () => {
+const AllLink = () => {
   const AllclassLink = [
     {
       sub: "P6",

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Pages/Login";
 import Mainpage from "./Pages/Mainpage";
 import Zoomlink from "./Pages/Zoomlink";
-import All_link from "./AllLinkPage";
+import AllLink from "./AllLinkPage";
 
 const App = () => {
   return (
@@ -12,7 +12,7 @@ const App = () => {
         <Route path="/" element={<Login />} />
         <Route path="/Main" element={<Mainpage />} />
         <Route path="/Zoomlink" element={<Zoomlink />} />
-        <Route path="/AllLink" element={<All_link />} />
+        <Route path="/AllLink" element={<AllLink />} />
       </Routes>
     </Router>
   );
