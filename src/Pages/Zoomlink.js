@@ -136,14 +136,15 @@ const Zoomlink = () => {
           <ul className="py-24 md:py-10  w-full h-screen">
             {findToday.links.map((link, index) => (
               <a
+                key={index}
                 className="flex flex-col items-center"
                 id={index}
                 href={link.link}
               >
-                <li className=" w-3/4 py-6 px-6 text-xl md:text-3xl flex bg-slate-400 my-2 rounded-md text-white justify-center">
+                <li className=" w-3/4 py-6 px-6 text-xl md:text-3xl flex bg-slate-400 my-2 rounded-md text-white justify-center shadow">
                   <h1 className="underline"> {link.type} </h1>
                   <h1 className="font-semibold text-orange-600 px-4">
-                    -{link.time}
+                    - {link.time}
                   </h1>
                 </li>
               </a>

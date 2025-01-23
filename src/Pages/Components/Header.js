@@ -55,7 +55,7 @@ const Header = () => {
           </button>
         </div>
         <button
-          className="bg-white border-orange-600 border-2 py-2 px-1  md:px-10 text-orange-600 text-x rounded-md absolute right-7  md:top-30 md:right-10 font-bold hover:bg-orange-600 hover:text-white duration-700 "
+          className="bg-white border-orange-600 border-2 py-2 px-1  md:px-10 text-orange-600 text-x rounded-md absolute right-7  md:top-24 md:right-36  font-bold hover:bg-orange-600 hover:text-white duration-700 "
           onClick={() => navigate("/AllLink")}
         >
           All Links

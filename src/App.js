@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Pages/Login";
 import Mainpage from "./Pages/Mainpage";
 import Zoomlink from "./Pages/Zoomlink";
-import All_LinkPage from "./Pages/All_LinkPage";
+import All_LinkPage from "./AllLinkPage";
+
 
 const App = () => {
   return (
