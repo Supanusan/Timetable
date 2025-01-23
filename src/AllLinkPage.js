@@ -1,6 +1,6 @@
 import React from "react";
 
-const All_LinkPage = () => {
+const All_link = () => {
   const AllclassLink = [
     {
       sub: "P6",
@@ -38,4 +38,4 @@ const All_LinkPage = () => {
   );
 };
 
-export default All_LinkPage;
+export default All_link;
